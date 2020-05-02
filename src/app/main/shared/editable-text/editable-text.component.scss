@@ -1,0 +1,23 @@
+.editable-container{
+  width: 100%;
+}
+
+.text{
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.input{
+  color: #172B4D !important;
+  background-color: white;
+  border-color: #0059BF;
+}
+
+input{
+  width: 100%;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+

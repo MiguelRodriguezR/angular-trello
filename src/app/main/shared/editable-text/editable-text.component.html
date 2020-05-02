@@ -1,0 +1,10 @@
+<div class="editable-container">
+  <input #input
+         [ngStyle]="customStyle"
+         [ngClass]="{'text': !isEditing, 'input': isEditing}"
+         (focus)="setIsEditing()"
+         (blur)="changeText()"
+         value="{{text}}">
+</div>
+
+
