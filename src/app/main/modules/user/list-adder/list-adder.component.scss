@@ -1,0 +1,52 @@
+button, input, .adder-container {
+  transition: all 0.2s ease-out;
+}
+
+.adder-container {
+  width: 272px;
+  max-width: 272px;
+  background-color: rgba(235, 236, 240, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.adder-container:hover {
+  background-color: rgba(235, 236, 240, 0.3);
+}
+
+input {
+  font-size: 1.1em;
+  padding: 5px;
+  border: solid 3px transparent;
+}
+
+button{
+  margin-top: 5px;
+  background-color: #5FB74B;
+  width: 40%;
+  color: white;
+}
+
+.input {
+  color: black;
+}
+
+.text {
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.no-opacity, .no-opacity:hover {
+  background-color: rgba(235, 236, 240, 1) !important;
+}
+
+.hidded {
+  margin: 0;
+  height: 1px;
+  opacity: 0;
+}

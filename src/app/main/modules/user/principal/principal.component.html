@@ -1,0 +1,17 @@
+<div class="principal-container">
+  <div class="header">
+    <app-editable-text class="title" [customStyle]="titleStyle" [obj]="board"></app-editable-text>
+  </div>
+  <div class="board">
+    <div cdkDropList
+         cdkDropListOrientation="horizontal" class="board-list"
+         (cdkDropListDropped)="drop($event)">
+      <div class="box" *ngFor="let l of board.lists"
+           (cdkDragStarted)="cdkDragStarted($event)" cdkDrag>
+        <div [ngStyle]="{'max-height':cardHeight+'px' }" class="custom-placeholder" *cdkDragPlaceholder></div>
+        <app-list [list]="l" ></app-list>
+      </div>
+      <app-list-adder (listEvent)="createList($event)"></app-list-adder>
+    </div>
+  </div>
+</div>

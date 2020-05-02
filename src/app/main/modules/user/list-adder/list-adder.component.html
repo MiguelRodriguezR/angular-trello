@@ -1,0 +1,7 @@
+<div #insideElement class="adder-container" [ngClass]="{'no-opacity': isEditing}">
+  <input #input
+         placeholder={{placeholder}}
+         [ngClass]="{'text': !isEditing, 'input': isEditing}"
+         value="{{text}}">
+  <button mat-button (click)="click()" [ngClass]="{'hidded': !isEditing}">{{buttonText}}</button>
+</div>
