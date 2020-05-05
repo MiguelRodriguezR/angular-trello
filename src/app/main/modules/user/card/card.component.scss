@@ -1,0 +1,29 @@
+.card-container{
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  cursor: pointer;
+  margin-bottom: 8px;
+  padding: 4px;
+}
+
+.card-container:hover{
+  background-color: #f7f7f7;
+}
+
+.top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.top:hover > .edit{
+  visibility: visible;
+}
+
+.edit{
+  visibility: hidden;
+}
+
+.material-icons{
+  font-size: 18px;
+}

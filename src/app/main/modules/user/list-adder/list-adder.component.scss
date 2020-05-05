@@ -19,6 +19,7 @@ button, input, .adder-container {
 }
 
 input {
+  color: white;
   font-size: 1.1em;
   padding: 5px;
   border: solid 3px transparent;
@@ -32,11 +33,10 @@ button{
 }
 
 .input {
-  color: black;
+  color: black !important;
 }
 
 .text {
-  color: white;
   background-color: transparent;
   cursor: pointer;
 }
@@ -50,3 +50,4 @@ button{
   height: 1px;
   opacity: 0;
 }
+

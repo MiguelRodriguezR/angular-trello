@@ -7,16 +7,20 @@ import {ListAdderComponent} from './list-adder/list-adder.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ListComponent } from './list/list.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { CardComponent } from './card/card.component';
+import { CardDialogComponent } from './card-dialog/card-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
-  declarations: [PrincipalComponent, ListAdderComponent, ListComponent],
+  declarations: [PrincipalComponent, ListAdderComponent, ListComponent, CardComponent, CardDialogComponent],
   imports: [
     CommonModule,
     EditableModule,
     UserRoutingModule,
     MatButtonModule,
-    DragDropModule
+    DragDropModule,
+    MatDialogModule
   ]
 })
 export class UserModule {

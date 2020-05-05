@@ -1,4 +1,28 @@
 <div class="list-container">
-  <app-editable-text class="title" [obj]="list"></app-editable-text>
+  <div class="title">
+    <app-editable-text class="title" [customStyle]="listTilteStyle" [obj]="list"></app-editable-text>
+  </div>
+  <div class="cards" *ngIf="!lservice.isCreating">
+    <div
+      cdkDropList
+      id="{{listId}}"
+      [cdkDropListData]="list.cards"
+      [cdkDropListConnectedTo]="lservice.listId"
+      class="list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="box" *ngFor="let card of list.cards" cdkDrag>
+        <app-card  [card]="card"></app-card>
+      </div>
+    </div>
+
+  </div>
+  <div class="adder">
+    <app-list-adder
+      [customStyle]="cardAdderStyle"
+      [text]="strings.cardAdder.title"
+      [placeholder]="strings.cardAdder.placeholder"
+      [buttonText]="strings.cardAdder.button"
+      (listEvent)="createCard($event)"></app-list-adder>
+  </div>
 </div>
 

@@ -1,5 +1,8 @@
-<div #insideElement class="adder-container" [ngClass]="{'no-opacity': isEditing}">
+<div #insideElement class="adder-container"
+     [ngStyle]="customStyle"
+     [ngClass]="{'no-opacity': isEditing}">
   <input #input
+         [ngStyle]="inputColor"
          placeholder={{placeholder}}
          [ngClass]="{'text': !isEditing, 'input': isEditing}"
          value="{{text}}">

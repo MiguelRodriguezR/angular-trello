@@ -7,6 +7,11 @@ const STR = {
       title: '+ Add a new list',
       placeholder: 'Enter the list title ...',
       button: 'Add List'
+    },
+    cardAdder: {
+      title: '+ Add a new card',
+      placeholder: 'Enter the card title ...',
+      button: 'Add card'
     }
 
   },
@@ -15,6 +20,11 @@ const STR = {
       title: '+ Añadir una nueva lista',
       placeholder: 'Introduzca el título de la lista...',
       button: 'Añadir Lista'
+    },
+    cardAdder: {
+      title: '+ Añadir una nueva tarjeta',
+      placeholder: 'Introduzca el título de la tarjeta...',
+      button: 'Añadir tarjeta'
     }
   }
 
