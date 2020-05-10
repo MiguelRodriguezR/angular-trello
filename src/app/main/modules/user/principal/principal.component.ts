@@ -19,7 +19,7 @@ export class PrincipalComponent implements OnInit {
   board: Board;
 
   constructor() {
-    this.board = new Board('New Project');
+    this.board = new Board('Project Name');
     //JUST FOR TESTING PROPOSES
     this.board = TEST_BOARD as Board;
   }

@@ -1,0 +1,22 @@
+<div class="checklist-container">
+  <div class="title">{{checklist.title}}</div>
+  <div class="percent-bar">
+    <div class="number">{{checklist.completion}}%</div>
+    <div class="bar" [ngStyle]="{'width': checklist.completion+'%'}"></div>
+  </div>
+  <div class="checks">
+    <div class="check" *ngFor="let element of checklist.elements">
+      <mat-checkbox
+        class="checkbox"
+        (change)="check(element)"
+                    [checked]="element.completed">{{element.description}}
+      </mat-checkbox>
+    </div>
+  </div>
+  <div class="adder">
+    <app-list-adder
+      [customStyle]="checkAdderStyle"
+      [strings]="strings.checkAdder"
+      (listEvent)="createCheck($event)"></app-list-adder>
+  </div>
+</div>

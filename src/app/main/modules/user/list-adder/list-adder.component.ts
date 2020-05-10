@@ -11,26 +11,27 @@ export class ListAdderComponent implements OnInit {
   @ViewChild('insideElement') insideElement;
   @ViewChild('input') input;
   @Output() listEvent = new EventEmitter<string>();
-  @Input() text: string;
-  @Input() placeholder: string;
-  @Input() buttonText: string;
+  @Input() strings;
   @Input() customStyle: {};
+  text: string;
+  placeholder: string;
+  buttonText: string;
   inputColor;
   textDummy;
   isEditing = false;
 
 
-  constructor() {
-    // this.text = STRINGS.listAdder.title;
-    // this.placeholder = STRINGS.listAdder.placeholder;
-    // this.buttonText = STRINGS.listAdder.button;
-
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    this.textDummy = this.text;
     if (this.customStyle) {
       this.inputColor = {color: this.customStyle['color']};
+    }
+    if (this.strings) {
+      this.text = this.strings.title;
+      this.placeholder = this.strings.placeholder;
+      this.buttonText = this.strings.button;
+      this.textDummy = this.text;
     }
   }
 

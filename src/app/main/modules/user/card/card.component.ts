@@ -22,9 +22,9 @@ export class CardComponent implements OnInit {
     const dialogRef = this.dialog.open(CardDialogComponent,
       {panelClass: 'dialogC', data: {card: this.card}} as  MatDialogConfig<any>);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed', result);
+    // });
   }
 
 }

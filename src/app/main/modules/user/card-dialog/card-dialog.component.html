@@ -1,14 +1,34 @@
-<!--<h1 mat-dialog-title>Hi MIG</h1>-->
-<!--<div mat-dialog-content>-->
-  <!--<p>What's your favorite animal?</p>-->
-  <!--<mat-form-field>-->
-    <!--<mat-label>Favorite Animal</mat-label>-->
-    <!--<input matInput>-->
-  <!--</mat-form-field>-->
-<!--</div>-->
-<!--<div mat-dialog-actions>-->
-  <!--<button mat-button (click)="onNoClick()">No Thanks</button>-->
-  <!--<button mat-button [mat-dialog-close]="closeD()" cdkFocusInitial>Ok</button>-->
-<!--</div>-->
+<div class="container">
+  <div class="header" mat-dialog-title>
+    <div class="title">
+      <i class="material-icons">card_membership</i>
+      <app-editable-text [obj]="card"></app-editable-text>
+    </div>
+    <button mat-button [mat-dialog-close]="closeD()" cdkFocusInitial>
+      <i class="material-icons">close</i>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <div class="desc">
+      <div class="desc-top">
+        <i class="material-icons">short_text</i>
+        {{strings.cardDialog.description}}
+      </div>
+      <div class="desc-input">
+        <textarea class="full" matInput (blur)="addDesc($event)" value="{{card.description}}"></textarea>
+      </div>
+      <div class="checkLists">
+        <app-check-list-container *ngFor="let check of card.checks"
+                                  [card]="card" [checklist]="check"
+        ></app-check-list-container>
+      </div>
+      <div class="adder">
+        <app-list-adder
+          [customStyle]="checkAdderStyle"
+          [strings]="strings.checkListAdder"
+          (listEvent)="createCheck($event)"></app-list-adder>
+      </div>
+    </div>
+  </div>
+</div>
 
-dd

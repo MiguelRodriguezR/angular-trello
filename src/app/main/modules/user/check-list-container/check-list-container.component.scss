@@ -1,0 +1,21 @@
+.percent-bar {
+  .bar {
+    margin-left: 10px;
+    background-color: #5FB74B;
+    height: 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.percent-bar {
+  display: flex;
+}
+
+.checklist-container {
+  padding: 10px;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+  border-color: #A6B1BD;
+}

@@ -7,6 +7,12 @@ export const STYLES = {
   cardAdderStyle: {
     color: '#5E6C84',
     width: '95%',
+    width: '95%',
+  },
+  checkAdderStyle: {
+    color: '#5E6C84',
+    width: '100%',
+    'max-width': 'none',
   },
   listTilteStyle: {
     'font-weight': 'bold'

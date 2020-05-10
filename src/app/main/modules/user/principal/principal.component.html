@@ -12,9 +12,7 @@
         <app-list [list]="l" ></app-list>
       </div>
       <app-list-adder
-        [text]="strings.listAdder.title"
-        [placeholder]="strings.listAdder.placeholder"
-        [buttonText]="strings.listAdder.button"
+        [strings]="strings.listAdder"
         (listEvent)="createList($event)"></app-list-adder>
     </div>
   </div>

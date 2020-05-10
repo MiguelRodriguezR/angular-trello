@@ -19,9 +19,7 @@
   <div class="adder">
     <app-list-adder
       [customStyle]="cardAdderStyle"
-      [text]="strings.cardAdder.title"
-      [placeholder]="strings.cardAdder.placeholder"
-      [buttonText]="strings.cardAdder.button"
+      [strings]="strings.cardAdder"
       (listEvent)="createCard($event)"></app-list-adder>
   </div>
 </div>
