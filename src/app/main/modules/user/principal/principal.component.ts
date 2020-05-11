@@ -5,6 +5,7 @@ import {List} from '../../../entities/List';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {STRINGS} from '../../../constants/strings';
 import {TEST_BOARD} from "../../../constants/test";
+import {FilesService} from "../../../services/files.service";
 
 @Component({
   selector: 'app-principal',
@@ -18,8 +19,8 @@ export class PrincipalComponent implements OnInit {
   cardHeight = 0;
   board: Board;
 
-  constructor() {
-    this.board = new Board('Project Name');
+  constructor(private fileService: FilesService) {
+    this.board = new Board('Unnamed Project');
     //JUST FOR TESTING PROPOSES
     this.board = TEST_BOARD as Board;
   }
@@ -41,6 +42,20 @@ export class PrincipalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  clearBoard() {
+    this.fileService.isLoading = true;
+    this.board = new Board('Unnamed Project');
+    this.fileService.isLoading = false;
+  }
+
+  get fileS() {
+    return this.fileService;
+  }
+
+  fileChanged(e) {
+    this.fileService.loadDataJson(e.target.files[0], this.board);
   }
 
 }

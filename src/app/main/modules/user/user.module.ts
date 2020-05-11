@@ -13,6 +13,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import {CheckListContainerComponent} from './check-list-container/check-list-container.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     EditableModule,
     UserRoutingModule,
     MatButtonModule,
+    MatTooltipModule,
     DragDropModule,
     MatDialogModule,
     MatCheckboxModule

@@ -18,6 +18,16 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isCheckList() {
+    return this.card.checks.length > 0;
+  }
+
+  getChecksCurrentStatus() {
+    const total = this.card.checks.map(c => c.elements).reduce((an, ac) => ac.concat(an));
+    const actual = total.filter( ch => ch.completed);
+    return actual.length + '/' + total.length;
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(CardDialogComponent,
       {panelClass: 'dialogC', data: {card: this.card}} as  MatDialogConfig<any>);

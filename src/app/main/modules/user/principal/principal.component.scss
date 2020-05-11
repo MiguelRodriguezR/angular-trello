@@ -10,6 +10,8 @@
   left: 0;
   padding: 10px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgba(1,1,1,0.1);
 }
 
@@ -29,6 +31,17 @@
 
 .title{
   width: 300px;
+}
+
+.save-section{
+  a{
+    color: white;
+  }
+}
+
+.btn{
+  margin-left: 5px;
+  background-color: rgba(1,1,1,0.2);
 }
 
 

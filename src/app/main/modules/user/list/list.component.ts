@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   listId: string;
 
   constructor(private listService: ListService) {
-    console.log(this);
+    // console.log(this);
   }
 
   ngOnInit(): void {

@@ -5,5 +5,8 @@
       <i class="material-icons" (click)="openDialog()">edit</i>
     </div>
   </div>
-
+  <div class="checks" *ngIf="isCheckList()">
+    <i class="material-icons">playlist_add_check</i>
+    {{getChecksCurrentStatus()}}
+  </div>
 </div>

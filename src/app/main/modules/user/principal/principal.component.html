@@ -1,8 +1,30 @@
 <div class="principal-container">
-  <div class="header">
-    <app-editable-text class="title" [customStyle]="titleStyle" [obj]="board"></app-editable-text>
+  <div class="header" *ngIf="!fileS.isLoading">
+    <app-editable-text  class="title" [customStyle]="titleStyle" [obj]="board"></app-editable-text>
+    <div class="save-section">
+      <a class="btn btn-save"
+         mat-raised-button
+         matTooltip="Save Json"
+         [href]="fileS.generateDownloadJsonUri(board)"
+         download="trello.json">
+        <i class="material-icons">save</i>
+      </a>
+      <input type="file" id="selectedFile" (change)="fileChanged($event)" style="display: none;" />
+      <a class="btn btn-load"
+         onclick="document.getElementById('selectedFile').click();"
+         mat-raised-button
+         matTooltip="Load Json">
+        <i class="material-icons">create_new_folder</i>
+      </a>
+      <a class="btn btn-clear"
+         mat-raised-button
+         (click)="clearBoard()"
+         matTooltip="clear board">
+        <i class="material-icons">layers_clear</i>
+      </a>
+    </div>
   </div>
-  <div class="board">
+  <div class="board" *ngIf="!fileS.isLoading">
     <div cdkDropList
          cdkDropListOrientation="horizontal" class="board-list"
          (cdkDropListDropped)="drop($event)">

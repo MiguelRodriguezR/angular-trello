@@ -4,7 +4,7 @@
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
   cursor: pointer;
   margin-bottom: 8px;
-  padding: 4px;
+  padding: 7px;
 }
 
 .card-container:hover{
@@ -26,4 +26,16 @@
 
 .material-icons{
   font-size: 18px;
+}
+
+.checks{
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  font-weight: lighter;
+  color: #6B778C;
+
+  i{
+    margin-right: 3px;
+  }
 }
