@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Card} from '../../../entities/Card';
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
-import {CardDialogComponent} from "../card-dialog/card-dialog.component";
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {CardDialogComponent} from '../card-dialog/card-dialog.component';
+import {List} from '../../../entities/List';
 
 @Component({
   selector: 'app-card',
@@ -11,6 +12,7 @@ import {CardDialogComponent} from "../card-dialog/card-dialog.component";
 export class CardComponent implements OnInit {
 
   @Input() card: Card;
+  @Input() list: List;
 
   constructor(public dialog: MatDialog) {
   }
@@ -37,4 +39,7 @@ export class CardComponent implements OnInit {
     // });
   }
 
+  deleteCard() {
+    this.list.cards = this.list.cards.filter( c => c !== this.card);
+  }
 }

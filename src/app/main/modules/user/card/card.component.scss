@@ -22,6 +22,8 @@
 
 .edit{
   visibility: hidden;
+  display: flex;
+  flex-direction: row;
 }
 
 .material-icons{

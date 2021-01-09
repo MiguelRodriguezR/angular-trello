@@ -2,9 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {List} from '../../../entities/List';
 import {STRINGS} from '../../../constants/strings';
 import {Card} from '../../../entities/Card';
-import {STYLES} from "../../../constants/styles";
-import {ListService} from "../../../services/list.service";
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {STYLES} from '../../../constants/styles';
+import {ListService} from '../../../services/list.service';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {Board} from '../../../entities/Board';
 
 @Component({
   selector: 'app-list',
@@ -14,6 +15,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 export class ListComponent implements OnInit {
 
   @Input() list: List;
+  @Input() board: Board;
   cardAdderStyle = STYLES.cardAdderStyle;
   listTilteStyle = STYLES.listTilteStyle;
   strings = STRINGS;
@@ -46,4 +48,7 @@ export class ListComponent implements OnInit {
     }
   }
 
+  deleteList() {
+    this.board.lists = this.board.lists.filter(l => l !== this.list);
+  }
 }

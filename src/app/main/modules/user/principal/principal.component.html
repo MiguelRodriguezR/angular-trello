@@ -31,7 +31,7 @@
       <div class="box" *ngFor="let l of board.lists"
            (cdkDragStarted)="cdkDragStarted($event)" cdkDrag>
         <div [ngStyle]="{'max-height':cardHeight+'px' }" class="custom-placeholder" *cdkDragPlaceholder></div>
-        <app-list [list]="l" ></app-list>
+        <app-list [list]="l" [board]="board"></app-list>
       </div>
       <app-list-adder
         [strings]="strings.listAdder"

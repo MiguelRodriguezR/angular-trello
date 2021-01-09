@@ -1,6 +1,7 @@
 <div class="list-container">
-  <div class="title">
+  <div class="title flex-separate">
     <app-editable-text class="title" [customStyle]="listTilteStyle" [obj]="list"></app-editable-text>
+    <i class="material-icons delete" (click)="deleteList()">delete</i>
   </div>
   <div class="cards" *ngIf="!lservice.isCreating">
     <div
@@ -11,7 +12,7 @@
       class="list"
       (cdkDropListDropped)="drop($event)">
       <div class="box" *ngFor="let card of list.cards" cdkDrag>
-        <app-card  [card]="card"></app-card>
+        <app-card  [card]="card" [list]="list"></app-card>
       </div>
     </div>
 
